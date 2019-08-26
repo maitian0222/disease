@@ -829,7 +829,7 @@ body {
 .container .illinfor .illness_title .illness_info:before {
   content: "";
   /*height: .45333rem;*/
-  height: 20px;
+  height: 22px;
   display: inline-block;
   border-left: 5px solid #2e78e9;
   margin-right: 10px;
