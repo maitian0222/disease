@@ -3,6 +3,7 @@ body {
   padding: 45px 0;
   background: #fff;
   background-image: url("../images/bg.png");
+  user-select: none;
 }
 
 .operation-row {
