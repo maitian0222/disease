@@ -8,7 +8,7 @@ body {
   display: flex;
 }
 
-.aside {
+.aside:not(:empty) {
   width: 220px;
   padding: 15px;
   background-color: #e5e5e5;

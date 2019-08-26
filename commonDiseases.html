@@ -12,13 +12,11 @@
   </head>
   <body>
     <div class="main">
-      <div class="aside">
-        <ul class="type-list"></ul>
-      </div>
+      <div class="aside"></div>
       <div class="content"></div>
     </div>
     <script src="./js/polyfill.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./js/babel.min.js"></script>
     <script src="./js/jquery.js"></script>
     <script type="text/babel">
       var data = [
@@ -227,6 +225,7 @@
       ];
 
       $(function() {
+        $('.aside').append('<ul class="type-list"></ul>');
         data.map(function(item, index) {
           var li = `<li onclick="changeContent('${
             item.type
@@ -240,7 +239,7 @@
           </li>`;
           $(".type-list").append(li);
         });
-
+        
         initActive(data[0].type);
 
         //  点击常见疾病跳转疾病详情页面
