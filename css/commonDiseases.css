@@ -93,11 +93,10 @@ body {
   background: #3e86ec;
   color: #fff;
 }
-
-.operation-item-container .operation-item:first-child {
+.operation-item-container:first-child .operation-item {
   margin-left: 45px;
 }
 
-.operation-item-container .operation-item:last-child {
-  margin-right: 0px;
+.operation-item-container:last-child:not(:first-child) .operation-item {
+  margin-right: 0;
 }
