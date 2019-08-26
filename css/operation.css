@@ -1,0 +1,52 @@
+body {
+  margin: 0px;
+  padding: 45px 0;
+  background: #fff;
+  background-image: url("../images/bg.png");
+}
+
+.operation-row {
+  display: flex;
+  margin-bottom: 45px;
+}
+
+.operation-item {
+  /* flex: 1; */
+  width: 33.33%;
+  margin: 0 22.5px 0;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  background: #e8e8e8;
+  color: #333;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.operation-item > div {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.operation-item:empty {
+  background: transparent;
+  cursor: default;
+}
+
+.operation-item.active {
+  background: #3e86ec;
+  color: #fff;
+}
+
+.operation-row .operation-item:first-child {
+  margin-left: 45px;
+}
+
+.operation-row .operation-item:last-child {
+  margin-right: 45px;
+}

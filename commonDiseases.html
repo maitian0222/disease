@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+    <link rel="stylesheet" href="./css/operation.css" />
+    <title>常见疾病</title>
+  </head>
+  <body>
+    <div class="operation-row">
+      <div class="operation-item">
+        <img src="./images/icon1.png" />
+        <div>白内障术后健康宣教</div>
+      </div>
+      <div class="operation-item">
+        <img src="./images/icon1.png" />
+        <div>包皮环切术后健康宣教</div>
+      </div>
+      <div class="operation-item">
+        <img src="./images/icon1.png" />
+        <div>胆囊腹腔镜术后健康宣教</div>
+      </div>
+    </div>
+    <div class="operation-row">
+      <div class="operation-item">
+        <img src="./images/icon1.png" />
+        <div>妇科手术前注意事项</div>
+      </div>
+      <div class="operation-item">
+        <img src="./images/icon1.png" />
+        <div>腹股沟斜疝术后健康宣教</div>
+      </div>
+      <div class="operation-item">
+        <img src="./images/icon1.png" />
+        <div>结、直肠息肉镜下摘除术后健康宣教</div>
+      </div>
+    </div>
+    <div class="operation-row">
+      <div class="operation-item">
+        <img src="./images/icon1.png" />
+        <div>日间手术病房患者术前准备须知</div>
+      </div>
+      <div class="operation-item">
+        <img src="./images/icon1.png" />
+        <div>日间手术流程管理</div>
+      </div>
+      <div class="operation-item">
+        <img src="./images/icon1.png" />
+        <div>日间手术评估制度</div>
+      </div>
+    </div>
+    <div class="operation-row">
+      <div class="operation-item">
+        <img src="./images/icon1.png" />
+        <div>日间手术准入制度</div>
+      </div>
+      <div class="operation-item">
+        <img src="./images/icon1.png" />
+        <div>声带息肉术后健康教育</div>
+      </div>
+      <div class="operation-item">
+        <img src="./images/icon1.png" />
+        <div>体表肿块术后健康宣教</div>
+      </div>
+    </div>
+    <div class="operation-row">
+      <div class="operation-item">
+        <img src="./images/icon1.png" />
+        <div>显微重建手术前、后注意事项</div>
+      </div>
+      <div class="operation-item"></div>
+      <div class="operation-item"></div>
+    </div>
+
+    <script src="./js/jquery.js"></script>
+    <script>
+      var data = [
+        {
+          type: "female",
+          title: "女性",
+          diseases: [
+            {
+              title: "阴道炎",
+              url: ""
+            },
+            {
+              title: "月经不调",
+              url: ""
+            },
+            {
+              title: "女性不孕症",
+              url: ""
+            },
+            {
+              title: "功血",
+              url: ""
+            },
+            {
+              title: "宫颈糜烂",
+              url: ""
+            },
+            {
+              title: "子宫肌瘤",
+              url: ""
+            },
+            {
+              title: "乳腺炎",
+              url: ""
+            },
+            {
+              title: "乳腺癌",
+              url: ""
+            },
+            {
+              title: "盆腔炎",
+              url: ""
+            }
+          ]
+        },
+        {
+          type: "children",
+          title: "儿童",
+          diseases: [
+            {
+              title: "小儿腹泻",
+              url: ""
+            },
+            {
+              title: "小儿肺炎",
+              url: ""
+            },
+            {
+              title: "小儿湿疹",
+              url: ""
+            },
+            {
+              title: "小儿食积",
+              url: ""
+            },
+            {
+              title: "儿童遗尿症",
+              url: ""
+            },
+            {
+              title: "手足口病",
+              url: ""
+            },
+            {
+              title: "鹅口疮",
+              url: ""
+            }
+          ]
+        },
+        {
+          type: "male",
+          title: "男性",
+          diseases: [
+            {
+              title: "前列腺炎",
+              url: ""
+            },
+            {
+              title: "龟头炎",
+              url: ""
+            },
+            {
+              title: "阳痿",
+              url: ""
+            },
+            {
+              title: "早泄",
+              url: ""
+            },
+            {
+              title: "包皮过长",
+              url: ""
+            },
+            {
+              title: "睾丸炎",
+              url: ""
+            },
+            {
+              title: "前列腺增生",
+              url: ""
+            },
+            {
+              title: "精囊炎",
+              url: ""
+            },
+            {
+              title: "男性不孕症",
+              url: ""
+            }
+          ]
+        },
+        {
+          type: "worker",
+          title: "上班族",
+          diseases: [
+            {
+              title: "颈椎病",
+              url: ""
+            },
+            {
+              title: "鼠标手",
+              url: ""
+            },
+            {
+              title: "屏幕脸",
+              url: ""
+            },
+            {
+              title: "腰椎病",
+              url: ""
+            },
+            {
+              title: "干眼",
+              url: ""
+            },
+            {
+              title: "紧张性头痛",
+              url: ""
+            },
+            {
+              title: "空调病",
+              url: ""
+            },
+            {
+              title: "失眠症",
+              url: ""
+            },
+            {
+              title: "胃病",
+              url: ""
+            }
+          ]
+        },
+        {
+          type: "older",
+          title: "老人",
+          diseases: [
+            {
+              title: "白内障",
+              url: ""
+            },
+            {
+              title: "骨关节炎",
+              url: ""
+            },
+            {
+              title: "动脉硬化",
+              url: ""
+            },
+            {
+              title: "中风",
+              url: ""
+            },
+            {
+              title: "冠心病",
+              url: ""
+            },
+            {
+              title: "骨质疏松",
+              url: ""
+            },
+            {
+              title: "心律失常",
+              url: ""
+            },
+            {
+              title: "老年痴呆",
+              url: ""
+            },
+            {
+              title: "远视眼",
+              url: ""
+            }
+          ]
+        }
+      ];
+
+      $(function() {
+        $(".operation-item:not(:empty)").click(function() {
+          const htmlName = $(this).attr("data-name");
+          $(this).addClass("active");
+          $(this)
+            .children("img")
+            .attr("src", "./images/icon_1.png");
+          // window.location.href = htmlName;
+        });
+      });
+    </script>
+  </body>
+</html>
