@@ -787,7 +787,7 @@ body {
   /*font-size: .45333rem;*/
   /*color: #323232;*/
   /*font-family: '.PingFangSC-Medium'*/
-  font-size: 20px;
+  font-size: 22px;
   /* font-size: .45333rem; */
   color: #323232;
   font-weight: 700;
@@ -802,7 +802,7 @@ body {
 .container .illinfor .illness_content {
   padding: 0.4rem 0.4rem 0;
   /* font-size: 0.4rem; */
-  font-size: 16px;
+  font-size: 18px;
   color: #666;
 }
 
@@ -821,7 +821,7 @@ body {
 
 .container .status .status_title .status_info {
   /* font-size: 0.45333rem; */
-  font-size: 20px;
+  font-size: 22px;
   color: #323232;
   font-weight: 700;
 }
@@ -839,7 +839,7 @@ body {
 .container .status .status_content {
   padding: 0.4rem 0.4rem 0;
   /* font-size: 0.4rem; */
-  font-size: 16px;
+  font-size: 18px;
   color: #666;
 }
 
@@ -849,7 +849,7 @@ body {
 
 .limit-height {
   /* height: 5.33333rem; */
-  height: 5.1rem;
+  height: 5rem;
   overflow: hidden;
 }
 
@@ -879,6 +879,7 @@ body {
   color: #999;
   text-decoration: none;
   vertical-align: middle;
+  font-size: 18px;
 }
 
 .show-btn.on {
