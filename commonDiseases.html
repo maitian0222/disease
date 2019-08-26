@@ -7,73 +7,15 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
-    <link rel="stylesheet" href="./css/operation.css" />
+    <link rel="stylesheet" href="./css/commonDiseases.css" />
     <title>常见疾病</title>
   </head>
   <body>
-    <div class="operation-row">
-      <div class="operation-item">
-        <img src="./images/icon1.png" />
-        <div>白内障术后健康宣教</div>
+    <div class="main">
+      <div class="aside">
+        <ul class="type-list"></ul>
       </div>
-      <div class="operation-item">
-        <img src="./images/icon1.png" />
-        <div>包皮环切术后健康宣教</div>
-      </div>
-      <div class="operation-item">
-        <img src="./images/icon1.png" />
-        <div>胆囊腹腔镜术后健康宣教</div>
-      </div>
-    </div>
-    <div class="operation-row">
-      <div class="operation-item">
-        <img src="./images/icon1.png" />
-        <div>妇科手术前注意事项</div>
-      </div>
-      <div class="operation-item">
-        <img src="./images/icon1.png" />
-        <div>腹股沟斜疝术后健康宣教</div>
-      </div>
-      <div class="operation-item">
-        <img src="./images/icon1.png" />
-        <div>结、直肠息肉镜下摘除术后健康宣教</div>
-      </div>
-    </div>
-    <div class="operation-row">
-      <div class="operation-item">
-        <img src="./images/icon1.png" />
-        <div>日间手术病房患者术前准备须知</div>
-      </div>
-      <div class="operation-item">
-        <img src="./images/icon1.png" />
-        <div>日间手术流程管理</div>
-      </div>
-      <div class="operation-item">
-        <img src="./images/icon1.png" />
-        <div>日间手术评估制度</div>
-      </div>
-    </div>
-    <div class="operation-row">
-      <div class="operation-item">
-        <img src="./images/icon1.png" />
-        <div>日间手术准入制度</div>
-      </div>
-      <div class="operation-item">
-        <img src="./images/icon1.png" />
-        <div>声带息肉术后健康教育</div>
-      </div>
-      <div class="operation-item">
-        <img src="./images/icon1.png" />
-        <div>体表肿块术后健康宣教</div>
-      </div>
-    </div>
-    <div class="operation-row">
-      <div class="operation-item">
-        <img src="./images/icon1.png" />
-        <div>显微重建手术前、后注意事项</div>
-      </div>
-      <div class="operation-item"></div>
-      <div class="operation-item"></div>
+      <div class="content"></div>
     </div>
 
     <script src="./js/jquery.js"></script>
@@ -284,15 +226,86 @@
       ];
 
       $(function() {
-        $(".operation-item:not(:empty)").click(function() {
+        data.map(function(item, index) {
+          var li = `<li onclick="changeContent('${
+            item.type
+          }',this)" data-type="${item.type}" class=${
+            index === 0 ? "active" : ""
+          }>
+            <div class="icon"><img src="./images/icon_${
+              index === 0 ? `${item.type}_active` : item.type
+            }.png" /></div>
+            <div class="text">${item.title}</div>
+          </li>`;
+          $(".type-list").append(li);
+        });
+
+        initActive(data[0].type);
+
+        //  点击常见疾病跳转疾病详情页面
+        $(".operation-item").click(function() {
           const htmlName = $(this).attr("data-name");
+          $(".operation-item").removeClass("active");
+          $(".operation-item img").each(function() {
+            $(this).attr(
+              "src",
+              $(this)
+                .attr("src")
+                .replace("_active", "")
+            );
+          });
           $(this).addClass("active");
           $(this)
             .children("img")
-            .attr("src", "./images/icon_1.png");
+            .attr("src", "./images/icon_heart_active.png");
           // window.location.href = htmlName;
         });
       });
+
+      function initActive(type) {
+        $(".content").empty();
+        var diseasesList = [];
+        const findType = data.find(function(item) {
+          if (item.type === type) {
+            return item;
+          }
+          return undefined;
+        });
+        for (var i = 0; i < findType.diseases.length; i += 3) {
+          diseasesList.push(findType.diseases.slice(i, i + 3));
+        }
+        diseasesList.map(function(item) {
+          var str = "";
+          item.map(function(d) {
+            str += `<div class="operation-item-container"><div class="operation-item" data-name="${d.url}">
+            <img src="./images/icon_heart.png" />
+            <div>${d.title}</div>
+          </div></div>`;
+          });
+          str = `<div class="operation-row">${str}</div>`;
+          $(".content").append($(str));
+        });
+      }
+
+      function changeContent(type) {
+        initActive(type);
+        // 选项高亮
+        $("[data-type]").removeClass("active");
+        $("[data-type] img").each(function() {
+          $(this).attr(
+            "src",
+            $(this)
+              .attr("src")
+              .replace("_active", "")
+          );
+        });
+
+        $('[data-type="' + type + '"]').addClass("active");
+        $('[data-type="' + type + '"] img').attr(
+          "src",
+          `./images/icon_${type}_active.png`
+        );
+      }
     </script>
   </body>
 </html>
