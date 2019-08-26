@@ -17,9 +17,10 @@
       </div>
       <div class="content"></div>
     </div>
-
+    <script src="./js/polyfill.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="./js/jquery.js"></script>
-    <script>
+    <script type="text/babel">
       var data = [
         {
           type: "female",
@@ -243,7 +244,7 @@
         initActive(data[0].type);
 
         //  点击常见疾病跳转疾病详情页面
-        $(".operation-item").click(function() {
+        $(document).on("click", ".operation-item", function() {
           const htmlName = $(this).attr("data-name");
           $(".operation-item").removeClass("active");
           $(".operation-item img").each(function() {
