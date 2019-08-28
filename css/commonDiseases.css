@@ -98,6 +98,6 @@ body {
   margin-left: 45px;
 }
 
-.operation-item-container:last-child:not(:first-child) .operation-item {
+.operation-item-container:nth-child(3) .operation-item {
   margin-right: 0;
 }
