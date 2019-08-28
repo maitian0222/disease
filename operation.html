@@ -11,127 +11,10 @@
     <link rel="stylesheet" href="./css/operation.css" />
   </head>
   <body>
-    <div class="operation-row">
-      <div class="operation-item-container">
-        <div class="operation-item" data-name="JKXJ-BaiNeiZhang.html">
-          <img src="./images/icon1.png" />
-          <div>白内障术后健康宣教</div>
-        </div>
-      </div>
+    <div id="content"></div>
 
-      <div class="operation-item-container">
-        <div class="operation-item" data-name="JKXJ-BaoPiHuanQieShouShu.html">
-          <img src="./images/icon1.png" />
-          <div>包皮环切术后健康宣教</div>
-        </div>
-      </div>
-
-      <div class="operation-item-container">
-        <div class="operation-item" data-name="JKXJ-DanNangFuQiangJingShu.html">
-          <img src="./images/icon1.png" />
-          <div>胆囊腹腔镜术后健康宣教</div>
-        </div>
-      </div>
-    </div>
-    <div class="operation-row">
-      <div class="operation-item-container">
-        <div class="operation-item" data-name="JKXJ-FuKeShouShu.html">
-          <img src="./images/icon1.png" />
-          <div>妇科手术前注意事项</div>
-        </div>
-      </div>
-
-      <div class="operation-item-container">
-        <div class="operation-item" data-name="JKXJ-FuGuGouXieShanShu.html">
-          <img src="./images/icon1.png" />
-          <div>腹股沟斜疝术后健康宣教</div>
-        </div>
-      </div>
-
-      <div class="operation-item-container">
-        <div
-          class="operation-item"
-          data-name="JKXJ-ZhiChangXiRouChangJing.html"
-        >
-          <img src="./images/icon1.png" />
-          <div>结、直肠息肉镜下摘除术后健康宣教</div>
-        </div>
-      </div>
-    </div>
-    <div class="operation-row">
-      <div class="operation-item-container">
-        <div class="operation-item" data-name="JKXJ-RiJianShouShuRuYuan.html">
-          <img src="./images/icon1.png" />
-          <div>日间手术入院前及术前须知</div>
-        </div>
-      </div>
-      <div class="operation-item-container">
-        <div
-          class="operation-item"
-          data-name="JKXJ-RiJianShouShuLiuChengGuanLi.html"
-        >
-          <img src="./images/icon1.png" />
-          <div>日间手术流程管理</div>
-        </div>
-      </div>
-
-      <div class="operation-item-container">
-        <div
-          class="operation-item"
-          data-name="JKXJ-RiJianShouShuPingGuZhiDu.html"
-        >
-          <img src="./images/icon1.png" />
-          <div>日间手术评估制度</div>
-        </div>
-      </div>
-    </div>
-    <div class="operation-row">
-      <div class="operation-item-container">
-        <div
-          class="operation-item"
-          data-name="JKXJ-RiJianShouShuZhunRuZhiDu.html"
-        >
-          <img src="./images/icon1.png" />
-          <div>日间手术准入制度</div>
-        </div>
-      </div>
-
-      <div class="operation-item-container">
-        <div class="operation-item" data-name="JKXJ-ShengDaiXiRouShu.html">
-          <img src="./images/icon1.png" />
-          <div>声带息肉术后健康教育</div>
-        </div>
-      </div>
-
-      <div class="operation-item-container">
-        <div class="operation-item" data-name="JKXJ-TiBiaoZhongKuaiShu.html">
-          <img src="./images/icon1.png" />
-          <div>体表肿块术后健康宣教</div>
-        </div>
-      </div>
-    </div>
-    <div class="operation-row">
-      <div class="operation-item-container">
-        <div
-          class="operation-item"
-          data-name="JKXJ-XianWeiChongJianShouShu.html"
-        >
-          <img src="./images/icon1.png" />
-          <div>显微重建手术前、后注意事项</div>
-        </div>
-      </div>
-      <div class="operation-item-container">
-        <div class="operation-item" data-name="JKXJ-ShenJieShiShuHou.html">
-          <img src="./images/icon1.png" />
-          <div>肾结石术后注意事项</div>
-        </div>
-      </div>
-
-      <div class="operation-item-container">
-        <div class="operation-item"></div>
-      </div>
-    </div>
-
+    <script src="./js/polyfill.min.js"></script>
+    <script src="./js/babel.min.js"></script>
     <script src="./js/jquery.js"></script>
     <script type="text/babel">
       var data = [
@@ -161,7 +44,7 @@
         },
         {
           title: "包皮环切术后健康宣教",
-          url: "KXJ-BaoPiHuanQieShouShu"
+          url: "JKXJ-BaoPiHuanQieShouShu"
         },
         {
           title: "肾结石术后注意事项",
