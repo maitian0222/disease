@@ -1,6 +1,6 @@
 body {
   margin: 0px;
-  padding: 45px 0;
+  padding: 45px;
   background: #fff;
   background-image: url("../images/bg.png");
   user-select: none;
@@ -51,10 +51,18 @@ body {
   color: #fff;
 }
 
-.operation-item-container:first-child .operation-item {
-  margin-left: 45px;
+.operation-row:last-child {
+  margin-bottom: 0;
 }
 
-.operation-item-container:last-child:not(:first-child) .operation-item {
-  margin-right: 45px;
+.operation-item-container:first-child .operation-item {
+  margin-left: 0px;
+}
+
+.operation-item-container:first-child .operation-item {
+  margin-left: 0px;
+}
+
+.operation-item-container:nth-child(3) .operation-item {
+  margin-right: 0;
 }

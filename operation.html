@@ -133,15 +133,96 @@
     </div>
 
     <script src="./js/jquery.js"></script>
-    <script>
+    <script type="text/babel">
+      var data = [
+        {
+          title: "日间手术准入制度",
+          url: "JKXJ-RiJianShouShuZhunRuZhiDu"
+        },
+        {
+          title: "日间手术入院前及术前须知",
+          url: "JKXJ-RiJianShouShuBingFangHuanZheShu"
+        },
+        {
+          title: "日间手术评估制度",
+          url: "JKXJ-RiJianShouShuPingGuZhiDu"
+        },
+        {
+          title: "妇科手术前注意事项",
+          url: "JKXJ-FuKeShouShu"
+        },
+        {
+          title: "腹股沟斜疝术后健康宣教",
+          url: "JKXJ-FuGuGouXieShanShu"
+        },
+        {
+          title: "结、直肠息肉镜下摘除术后健康宣教",
+          url: "JKXJ-ZhiChangXiRouChangJing"
+        },
+        {
+          title: "包皮环切术后健康宣教",
+          url: "KXJ-BaoPiHuanQieShouShu"
+        },
+        {
+          title: "肾结石术后注意事项",
+          url: "JKXJ-ShenJieShiShuHou"
+        },
+        {
+          title: "日间手术流程管理",
+          url: "JKXJ-RiJianShouShuLiuChengGuanLi"
+        },
+        {
+          title: "胆囊腹腔镜术后健康宣教",
+          url: "JKXJ-DanNangFuQiangJingShu"
+        },
+        {
+          title: "白内障术后健康宣教",
+          url: "JKXJ-BaiNeiZhang"
+        },
+        {
+          title: "声带息肉术后健康教育",
+          url: "JKXJ-ShengDaiXiRouShu"
+        },
+        {
+          title: "体表肿块术后健康宣教",
+          url: "JKXJ-TiBiaoZhongKuaiShu"
+        },
+        {
+          title: "显微重建手术前、后注意事项",
+          url: "JKXJ-XianWeiChongJianShouShu"
+        }
+      ];
+
+      // 初始化日间手术数据到页面中显示
+      function initData() {
+        var operationRowsList = [];
+        for (var i = 0; i < data.length; i += 3) {
+          operationRowsList.push(data.slice(i, i + 3));
+        }
+        operationRowsList.map(function(operationRow) {
+          var str = "";
+          operationRow.map(function(operation) {
+            str += `<div class="operation-item-container">
+              <div class="operation-item" data-name="${operation.url}">
+                <img src="./images/icon1.png" />
+                <div>${operation.title}</div>
+              </div>
+            </div>`;
+          });
+          str = `<div class="operation-row">${str}</div>`;
+          $("#content").append($(str));
+        });
+      }
       $(function() {
-        $(".operation-item:not(:empty)").click(function() {
+        initData();
+        // 点击某手术进入到手术详情页面
+        $(".operation-item").click(function() {
           const htmlName = $(this).attr("data-name");
           $(this).addClass("active");
           $(this)
             .children("img")
             .attr("src", "./images/icon_1.png");
-          window.location.href = htmlName;
+          window.location.href = `./operationDetails/${htmlName}.html`;
         });
       });
     </script>
