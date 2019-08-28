@@ -98,6 +98,28 @@
         user-select: none;
       }
     </style>
+    <script src="../js/polyfill.min.js"></script>
+    <script src="../js/babel.min.js"></script>
+    <script type="text/babel">
+      function sendMsg() {
+        window.postMessage(`肾结石术后注意事项。
+        1.调节饮食:
+适度喝水，忌食草酸高的食物(菠菜、豆制品、葡萄、可可、茶叶、番茄、土豆、竹笋) ,忌食钙高的食物(牛奶、海带、虾、豆制品),忌食嘌呤食物(动物内脏、海鲜、花生、豆角)。
+2.运动的重要性:
+经常做运动，如跳绳( 跳跃式运动)、爬楼梯、跑步
+3.遵医嘱用药:
+注意药物副作用，不能随意增减药量.
+4.定期回院复查:
+验尿、B超，观察有无复发、残余结石情况.
+5.  肾结石反复发作提示:
+根本原因尚未去除，又形成新的结石;可能与尿酸高，甲状旁腺或肾功能有关.`);
+      }
+      window.onload = function() {
+        document.addEventListener("message", function(msg) {
+          sendMsg();
+        });
+      };
+    </script>
   </head>
 
   <body lang="ZH-CN" style="text-justify-trim:punctuation">
