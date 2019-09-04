@@ -9,13 +9,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
     <title>日间手术</title>
     <link rel="stylesheet" href="./css/operation.css" />
-  </head>
-  <body>
-    <div id="content"></div>
-
     <script src="./js/polyfill.min.js"></script>
     <script src="./js/babel.min.js"></script>
     <script src="./js/jquery.js"></script>
+    <script src="./js/common.js"></script>
     <script type="text/babel">
       var data = [
         {
@@ -86,7 +83,7 @@
           var str = "";
           operationRow.map(function(operation) {
             str += `<div class="operation-item-container">
-              <div class="operation-item" data-name="${operation.url}">
+              <div class="operation-item" data-name="${operation.url}" >
                 <img src="./images/icon1.png" />
                 <div>${operation.title}</div>
               </div>
@@ -108,6 +105,21 @@
           window.location.href = `./operationDetails/${htmlName}.html`;
         });
       });
+      window.onload = function() {
+        document.addEventListener("message", function(msg) {
+          const obj = JSON.parse(msg.data);
+          const fontSize = obj.font;
+          const iconSize = obj.pic;
+          $("body").css({
+            "font-size": `${fontSize}px`,
+            opacity: 1
+          });
+          $("body img").css("width", `${iconSize}px`);
+        });
+      };
     </script>
+  </head>
+  <body>
+    <div id="content"></div>
   </body>
 </html>

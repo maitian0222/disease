@@ -9,12 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
     <link rel="stylesheet" href="./css/commonDiseases.css" />
     <title>常见疾病</title>
-  </head>
-  <body>
-    <div class="main">
-      <div class="aside"></div>
-      <div class="content"></div>
-    </div>
+
     <script src="./js/polyfill.min.js"></script>
     <script src="./js/babel.min.js"></script>
     <script src="./js/jquery.js"></script>
@@ -225,23 +220,8 @@
       ];
 
       $(function() {
-        $(".aside").append('<ul class="type-list"></ul>');
-        data.map(function(item, index) {
-          var li = `<li onclick="changeContent('${
-            item.type
-          }',this)" data-type="${item.type}" class=${
-            index === 0 ? "active" : ""
-          }>
-            <div class="icon"><img src="./images/icon_${
-              index === 0 ? `${item.type}_active` : item.type
-            }.png" /></div>
-            <div class="text">${item.title}</div>
-          </li>`;
-          $(".type-list").append(li);
-        });
-
+        initNav();
         initActive(data[0].type);
-
         //  点击常见疾病跳转疾病详情页面
         $(document).on("click", ".operation-item", function() {
           const htmlName = $(this).attr("data-name");
@@ -264,6 +244,23 @@
             "/detail/index_sino.html";
         });
       });
+
+      function initNav() {
+        $(".aside").append('<ul class="type-list"></ul>');
+        data.map(function(item, index) {
+          var li = `<li onclick="changeContent('${
+            item.type
+          }',this)" data-type="${item.type}" class=${
+            index === 0 ? "active" : ""
+          }>
+            <div class="icon"><img src="./images/icon_${
+              index === 0 ? `${item.type}_active` : item.type
+            }.png" /></div>
+            <div class="text">${item.title}</div>
+          </li>`;
+          $(".type-list").append(li);
+        });
+      }
 
       function initActive(type) {
         $(".content").empty();
@@ -309,6 +306,25 @@
           `./images/icon_${type}_active.png`
         );
       }
+
+      window.onload = function() {
+        document.addEventListener("message", function(msg) {
+          const obj = JSON.parse(msg.data);
+          const fontSize = obj.font;
+          const iconSize = obj.pic;
+          $("body").css({
+            "font-size": `${fontSize}px`,
+            opacity: 1
+          });
+          $("body img").css("width", `${iconSize}px`);
+        });
+      };
     </script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="aside"></div>
+      <div class="content"></div>
+    </div>
   </body>
 </html>
